@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Daydata-Mapper">
+	<sql id="search">
+	
+		<if test="searchType == 'A'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'B'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'C'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'D'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'E'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'F'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'G'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'G'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'I'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'J'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'K'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'L'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'M'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		
+		<if test="searchType == 'N'.toString()">
+			and hwcode like '%'||#{searchType}||'%'
+		</if>
+		<if test ="fromDate != null and fromDate !='' and toDate != null and toDate !='' ">
+			 and TO_CHAR(dayDate,'YYYY-MM-DD') BETWEEN #{fromDate} AND #{toDate}
+		</if>
+	</sql>
+	
+    <select id="selectSearchDaydataList" resultType="daydata">
+    	select dayNum, hwCode, dayEle, dayTrf, daySpd, dayPre, dayDlu, TO_CHAR(dayDate,'YYYY-MM-DD HH24:MI:SS') as dayDate
+    	from dayData
+    	where dayNum is not null
+	 	<include refid="search" />
+	 	 order by dayDate desc, hwCode
+    </select>
+    <select id="selectDaydataList" resultType="daydata">
+    	select dayNum, hwCode, dayEle, dayTrf, daySpd, dayPre, dayDlu, TO_CHAR(dayDate,'YYYY-MM-DD HH24:MI:SS') as dayDate
+    	from dayData
+    	where dayNum is not null
+	 	order by dayDate desc, hwCode
+    </select>
+    
+    
+    <select id="selectSearchDaydataListCount" resultType="int">
+    	select count(*)
+    	from dayData
+    	where dayNum is not null
+	 	<include refid="search" />
+    </select>
+    
+    <select id="selectDaydataBydaynum" resultType="daydata">
+    	select *
+    	from dayData
+    	where dayNum=#{dayNum}
+    </select>
+</mapper>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Highway-Mapper">
+	<sql id="search">
+		<if test="searchType == 'hw'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'A'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'B'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'C'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'D'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'E'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'F'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'G'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'G'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'I'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'J'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'K'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'L'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'M'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+		
+		<if test="searchType == 'N'.toString()">
+			and hwcode like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+    <select id="selectsearchHighwayList" resultType="highway">
+    	select *
+    	from highway
+    	where hwcode is not null
+    	<include refid="search" />
+    </select>
+    
+    <select id="selectHighwayByHwcode" resultType="highway">
+    	select *
+    	from highway
+    	where hwcode=#{hwcode}
+    </select>
+</mapper>

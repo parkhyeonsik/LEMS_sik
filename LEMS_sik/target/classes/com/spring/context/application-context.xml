@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<!-- Admin.picture -->
+	<bean id="picturePath" class="java.lang.String">
+		<constructor-arg value="${admin.picture.upload}" />      
+	</bean>
+
+	<!-- Repository -->
+	
+	
+	<bean id="highwayDAO" class="com.spring.dao.HighwayDAOImpl"
+		 p:sqlSession-ref="sqlSession" />
+	<bean id="TrafficDAO" class="com.spring.dao.TrafficDAOImpl"
+		 p:sqlSession-ref="sqlSession" />
+	<bean id="SunlightDAO" class="com.spring.dao.SunlightDAOImpl"
+		 p:sqlSession-ref="sqlSession" />
+	<bean id="daydataDAO" class="com.spring.dao.DaydataDAOImpl"
+		p:sqlSession-ref="sqlSession"/>    
+	   
+		 
+	<!-- Service -->
+	
+	<bean id="highwayService" class="com.spring.service.HighwayServiceImpl"
+		 p:highwayDAO-ref="highwayDAO"/>
+	<bean id="TrafficService" class="com.spring.service.TrafficServiceImpl"
+		 p:trafficDAO-ref="TrafficDAO"/>
+	<bean id="SunlightService" class="com.spring.service.SunlightServiceImpl"
+		 p:sunlightDAO-ref="SunlightDAO"/>
+	<bean id="daydataService" class="com.spring.service.DaydataServiceImpl"
+		p:daydataDAO-ref="daydataDAO"/>
+	
+</beans>

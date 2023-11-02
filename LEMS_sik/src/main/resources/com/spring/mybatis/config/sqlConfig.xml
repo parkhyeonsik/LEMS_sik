@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+ 
+<typeAliases>
+	<typeAlias type="java.lang.String" alias="str" />
+	<typeAlias type="java.lang.Integer" alias="int" />
+	<typeAlias type="java.util.Date" alias="date" />
+	
+	<typeAlias type="com.spring.command.SearchListCommand" alias="searchCommand"/>
+	<typeAlias type="com.spring.dto.MenuVO" alias="menu"/>
+	<typeAlias type="com.spring.dto.AdminVO" alias="admin"/>
+	<typeAlias type="com.spring.dto.SettingRecordVO" alias="record"/>
+	<typeAlias type="com.spring.dto.RecommandVO" alias="recommand"/>
+	<typeAlias type="com.spring.dto.LightVO" alias="light"/>
+	<typeAlias type="com.spring.dto.HighwayVO" alias="highway"/>
+	<typeAlias type="com.spring.dto.TrafficVO" alias="traffic"/>
+	<typeAlias type="com.spring.dto.SunlightVO" alias="sunlight"/>
+	<typeAlias type="com.spring.dto.BrVO" alias="br"/>
+	<typeAlias type="com.spring.dto.StatVO" alias="stat"/>
+	<typeAlias type="com.spring.dto.ElecUsingVO" alias="elec"/>
+	<typeAlias type="com.spring.dto.DaydataVO" alias="daydata"/>
+	<typeAlias type="com.spring.dto.AlarmVO" alias="alarm"/>
+
+
+</typeAliases>
+
+</configuration>
+
+
+
+
